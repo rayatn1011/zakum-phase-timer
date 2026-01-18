@@ -1,7 +1,89 @@
-# Tauri + React + Typescript
+# 殘暴炎魔 - 技能計時器
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+![Version](https://img.shields.io/badge/version-0.0.1-blue)
+![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-lightgrey)
+![Tauri](https://img.shields.io/badge/Tauri-24c8db)
 
-## Recommended IDE Setup
+一款專為楓之谷殘暴炎魔（Zakum）BOSS 戰設計的桌面計時器應用程式。幫助玩家追蹤 BOSS 各階段機制的技能冷卻時間，提升團隊協作效率。
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## ✨ 功能特色
+
+- 🎮 **階段計時** - 追蹤第一階段魔方（每 2 分 30 秒）和第二階段黑水/雙魔方輪替（每 40 秒）
+- ⏱️ **召喚小怪順延** - 手動標記召喚小怪事件，自動順延魔方時間 10 秒
+- 🌙 **深色/淺色主題** - 支援主題切換，保護玩家眼睛
+- 🎨 **8-bit 像素風格** - 復古遊戲風格 UI，融入楓之谷氛圍
+- ⌨️ **全域快捷鍵** - 即使視窗不在前景也能快速操作
+- 📌 **懸浮視窗** - 常駐遊戲畫面上方，隨時掌握計時狀態
+
+## 🛠️ 技術棧
+
+### 核心框架
+
+| 技術                                          | 說明                  |
+| --------------------------------------------- | --------------------- |
+| [Tauri](https://tauri.app/)                   | 跨平台桌面應用框架    |
+| [React](https://react.dev/)                   | UI 框架               |
+| [TypeScript](https://www.typescriptlang.org/) | 型別安全的 JavaScript |
+| [Vite](https://vite.dev/)                     | 次世代前端建構工具    |
+
+## 📁 專案結構
+
+```
+zakum-phase-timer/
+├── src/                    # 前端原始碼
+│   ├── routes/             # 頁面路由 (TanStack Router)
+│   ├── shared/             # 共用模組
+│   │   ├── ui/             # UI 元件
+│   │   │   ├── 8bit/       # 8-bit 像素風格元件
+│   │   │   └── shadcn/     # shadcn 風格元件
+│   ├── app.tsx             # 應用程式入口
+│   └── global.css          # 全域樣式與 design tokens
+├── src-tauri/              # Tauri 後端 (Rust)
+├── public/                 # 靜態資源
+└── package.json
+```
+
+## 🚀 開始使用
+
+### 前置需求
+
+- [Node.js](https://nodejs.org/)
+- [pnpm](https://pnpm.io/)
+- [Rust](https://www.rust-lang.org/)
+
+### 安裝與執行
+
+```bash
+# 複製專案
+git clone https://github.com/your-username/zakum-phase-timer.git
+cd zakum-phase-timer
+
+# 安裝依賴
+pnpm install
+
+# 開發模式
+pnpm tauri dev
+
+# 建構生產版本
+pnpm tauri build
+```
+
+## 📖 使用說明
+
+1. 啟動應用程式後進入主選單
+2. 點擊「開始倒數」進入計時器頁面
+3. 根據 BOSS 當前階段追蹤技能時間
+4. 使用快捷鍵標記事件（召喚小怪等）
+5. 點擊「退出」或使用快捷鍵關閉應用程式
+
+## 🎯 功能規格
+
+詳細功能規格請參考 [spec.gherkin](./public/spec.gherkin)
+
+## 📄 授權
+
+此專案為私有專案。
+
+---
+
+Made by 一隻狐狸
