@@ -1,11 +1,10 @@
-import "./global.css";
+import { ThemeProvider } from "next-themes";
+import { RouterProvider } from "./shared/router";
 
-function App() {
+export function App() {
   return (
-    <main className="container">
-      <h1>Zakum Phase Timer</h1>
-    </main>
+    <ThemeProvider attribute="class" defaultTheme="dark">
+      <RouterProvider />
+    </ThemeProvider>
   );
 }
-
-export default App;
